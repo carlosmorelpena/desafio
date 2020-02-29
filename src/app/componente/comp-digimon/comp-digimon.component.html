@@ -1,0 +1,23 @@
+<div style="margin: 1%;">
+    <div style="margin-bottom: 1%; margin-left: 25%;">
+        <div style="width: 60%;">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Filtro nombre, level o id" aria-label="Filtro  nombre, level o id" aria-describedby="button-addon2" [(ngModel)]="buscar" (keyup.enter)="busqueda()">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-success" type="button" id="button-addon2" (click)="busqueda()">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4">
+        <div class="col mb-4" *ngFor="let d of datos">
+            <div class="card" style="box-shadow: 5px 3px #ccc;">
+                <img [src]="d.img" class="card-img-top" alt="d.img">
+                <div class="card-body">
+                    <h5 class="card-title">{{d.name}}</h5>
+                    <p class="card-text">{{d.level}} Numero {{d.id}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
